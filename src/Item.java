@@ -13,6 +13,7 @@ public abstract class Item {
         this.nome = nome;
         this.dataAquisicao = dataAquisicao;
         this.valor = valor;
+        this.disponivel = true;
     }
 
     public String getId(){
@@ -31,5 +32,17 @@ public abstract class Item {
         return valor;
     }
 
-    
+    public boolean isDisponivel(){
+        return disponivel;
+    }
+
+    public abstract  boolean emprestar();
+
+    public abstract boolean devolver();
+
+    @Override
+    public String toString(){
+        return "------------";
+    }
+
 }
