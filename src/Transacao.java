@@ -1,3 +1,6 @@
+// Nome: Ericka Fernanda Lima de Queiroz - 10420084
+// Nome: Leticia Sampaio Cosmo - 10438865
+
 import java.time.LocalDate;
 
 public abstract class Transacao {
@@ -12,16 +15,14 @@ public abstract class Transacao {
     }
 
     public String getDescricao(){
-        return descricao;
+        return this.descricao;
     }
 
     public float getValor(){
-        return valor;
+        return this.valor;
     }
 
     public LocalDate getData(){
-        return data;
-    }
-
-    
+        return this.data;
+    }    
 }

@@ -1,29 +1,23 @@
+// Nome: Ericka Fernanda Lima de Queiroz - 10420084
+// Nome: Leticia Sampaio Cosmo - 10438865
+
 import java.time.LocalDate;
 
 public class Livro extends Item{
     private String autor;
+    private String genero;
 
-    public Livro(String id, String nome, LocalDate dataAquisicao, float valor, String autor){
+    public Livro(String id, String nome, LocalDate dataAquisicao, float valor, String autor, String genero){
         super(id, nome, dataAquisicao, valor);
         this.autor = autor;
+        this.genero = genero;
     }
 
     public String getAutor(){
-        return autor;
+        return this.autor;
     }
 
-    @Override
-    public boolean emprestar(){
-        if(disponivel){
-            disponivel = false;
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public String toString(){
-        return id + " | " + nome + " | " + autor + 
-        " | Disponível: " + disponivel;
+    public String getGenero() {
+        return this.genero;
     }
 }

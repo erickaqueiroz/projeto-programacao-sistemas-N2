@@ -1,3 +1,6 @@
+// Nome: Ericka Fernanda Lima de Queiroz - 10420084
+// Nome: Leticia Sampaio Cosmo - 10438865
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -10,16 +13,17 @@ public class Despesa extends Transacao{
     }
 
     public String getDestino(){
-        return destino;
+        return this.destino;
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return "------DESPESA------" + 
-        getDescricao() + " R$ " + String.format("%.2f", getValor())
-             + " " + getData().format(dtf)
-             + " " + getDestino();
+
+        return getDescricao() +
+                " R$ " + String.format("%.2f", getValor()) +
+                " " + getData().format(dtf) +
+                " " + getDestino();
     }
     
 }

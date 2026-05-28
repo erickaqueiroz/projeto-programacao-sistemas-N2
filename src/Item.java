@@ -1,3 +1,5 @@
+// Nome: Ericka Fernanda Lima de Queiroz - 10420084
+// Nome: Leticia Sampaio Cosmo - 10438865
 
 import java.time.LocalDate;
 
@@ -17,32 +19,57 @@ public abstract class Item {
     }
 
     public String getId(){
-        return id;
+        return this.id;
     }
 
     public String getNome(){
-        return nome;
+        return this.nome;
     }
 
     public LocalDate getDataAquisicao(){
-        return dataAquisicao;
+        return this.dataAquisicao;
     }
 
     public float getValor(){
-        return valor;
+        return this.valor;
     }
 
     public boolean isDisponivel(){
-        return disponivel;
+        return this.disponivel;
     }
 
-    public abstract  boolean emprestar();
+    public boolean emprestar(){
+        if(this.disponivel) {
+            this.disponivel = false;
+            return true;
+        }
+        return false;
+    }
 
-    public abstract boolean devolver();
+    public boolean devolver() {
+        if (!this.disponivel) {
+            this.disponivel = true;
+            return true;
+        }
+
+        return false;
+    }
 
     @Override
     public String toString(){
-        return "------------";
-    }
+        
+        String disponibilidade;
+        if (disponivel) {
+            disponibilidade = "item disponível";
+        } else {
+            disponibilidade = "item indisponível";
+        }
 
+        return "------Informações Item------" + "\n" +
+        "Id: " + getId() + "\n" +
+        "Nome: " + getNome() + "\n" +
+        "Data de aquisição: " + getDataAquisicao() + "\n" +
+        "Valor: " + getValor() + "\n" +
+        "Disponibilidade: " + disponibilidade;
+    } 
 }
